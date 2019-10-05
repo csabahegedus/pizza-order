@@ -12,12 +12,13 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 
+//@Table(name = "`ORDER`")
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Order {
+public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

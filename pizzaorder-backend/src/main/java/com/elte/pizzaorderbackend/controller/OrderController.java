@@ -1,6 +1,6 @@
 package com.elte.pizzaorderbackend.controller;
 
-import com.elte.pizzaorderbackend.model.Order;
+import com.elte.pizzaorderbackend.model.Orders;
 import com.elte.pizzaorderbackend.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,17 +16,17 @@ public class OrderController {
     private OrderRepository orderRepository;
 
     @GetMapping("")
-    public Iterable<Order> getOrders() {
+    public Iterable<Orders> getOrders() {
         return orderRepository.findAll();
     }
 
     @PostMapping("")
-    public ResponseEntity<Order> createOrder(
-            @RequestBody Order order
+    public ResponseEntity<Orders> createOrder(
+            @RequestBody Orders order
     ) {
         order.setCreatedAt(LocalDateTime.now());
         order.setModifiedAt(LocalDateTime.now());
-        Order savedOrder = orderRepository.save(order);
+        Orders savedOrder = orderRepository.save(order);
         return ResponseEntity.ok(savedOrder);
     }
 
