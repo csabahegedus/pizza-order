@@ -15,7 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Category {
+public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -24,7 +25,18 @@ public class Category {
     @NotNull
     private String name;
 
+    @Column
+    @NotNull
+    private String description;
+
+    @Column
+    @NotNull
+    private Integer price;
+
+    @ManyToMany
+    private List<Category> categories;
+
     @JsonIgnore
-    @ManyToMany(mappedBy = "categories")
-    private List<Product> products;
+    @ManyToMany(mappedBy = "products")
+    private List<Orders> orders;
 }

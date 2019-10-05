@@ -1,12 +1,14 @@
 package com.elte.pizzaorderbackend.controller;
 
 import com.elte.pizzaorderbackend.model.Orders;
+import com.elte.pizzaorderbackend.model.Product;
 import com.elte.pizzaorderbackend.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/orders")
@@ -41,4 +43,22 @@ public class OrderController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    /*@PostMapping("/{id}/products")
+    public ResponseEntity<Product> addProduct(
+            @RequestBody Product product,
+            @PathVariable Integer id
+    ) {
+        Optional<Orders> oOrder = orderRepository.findById(id);
+        if (oOrder.isPresent()) {
+            Orders order = oOrder.get();
+            order.getProducts().add(product);
+            product.setOrders(order);
+            Product createdProduct = messageRepository.save(message);
+            return ResponseEntity.ok(createdMessage);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }*/
 }

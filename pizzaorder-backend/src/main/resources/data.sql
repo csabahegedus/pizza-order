@@ -7,3 +7,9 @@ INSERT INTO category (name) VALUES ('Salata');
 INSERT INTO category (name) VALUES ('Pizza');
 INSERT INTO category (name) VALUES ('Desszert');
 INSERT INTO category (name) VALUES ('Udito');
+
+INSERT INTO product (name, description, price) VALUES ('Hawaii pizza', 'Egy nagyon szep hawaii pizza', 1690);
+
+INSERT INTO product_categories (products_id, categories_id) VALUES (1, 2);
+
+INSERT INTO orders_products (orders_id, products_id) VALUES (1, 1);
