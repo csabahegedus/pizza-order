@@ -2,12 +2,14 @@ package com.elte.pizzaorderbackend.controller;
 
 import com.elte.pizzaorderbackend.model.Orders;
 import com.elte.pizzaorderbackend.model.Product;
+import com.elte.pizzaorderbackend.model.User;
 import com.elte.pizzaorderbackend.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
@@ -20,6 +22,40 @@ public class OrderController {
     @GetMapping("")
     public Iterable<Orders> getOrders() {
         return orderRepository.findAll();
+    }
+
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Orders> get(@PathVariable Integer id) {
+        Optional<Orders> oOrder = orderRepository.findById(id);
+        if (oOrder.isPresent()) {
+            return ResponseEntity.ok(oOrder.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/{id}/products")
+    public Iterable<Product> getProducts(@PathVariable Integer id) {
+        Optional<Orders> oOrder = orderRepository.findById(id);
+        if (oOrder.isPresent()) {
+            return oOrder.get().getProducts();
+        } else {
+            return new ArrayList<Product>();
+        }
+    }
+
+    @GetMapping("/{id}/user")
+    public ResponseEntity<User> getUser(@PathVariable Integer id) {
+        Optional<Orders> oOrder = orderRepository.findById(id);
+        if (oOrder.isPresent()) {
+            // Hidding orders list values
+            ArrayList<Orders> ordersList = new ArrayList<>();
+            oOrder.get().getUser().setOrders(ordersList);
+            return ResponseEntity.ok(oOrder.get().getUser());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping("")

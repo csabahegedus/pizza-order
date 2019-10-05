@@ -1,5 +1,6 @@
 package com.elte.pizzaorderbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -42,6 +43,10 @@ public class Orders {
 
     @ManyToMany
     private List<Product> products;
+
+    @JsonIgnore()
+    @ManyToOne()
+    private User user;
 
     @Column
     @NotNull
