@@ -37,7 +37,7 @@ public class CategoryController {
     }
 
     @GetMapping("/{id}/products")
-    public Iterable<Product> getProducts(@PathVariable Integer id) {
+    public ResponseEntity<Iterable<Product>> getProducts(@PathVariable Integer id) {
         Optional<Category> oCategory = categoryRepository.findById(id);
         if (oCategory.isPresent()) {
             // Hidding category list values
@@ -45,9 +45,9 @@ public class CategoryController {
             oCategory.get().getProducts().forEach(product -> {
                 product.setCategories(categoryList);
             });
-            return oCategory.get().getProducts();
+            return ResponseEntity.ok(oCategory.get().getProducts());
         } else {
-            return new ArrayList<Product>();
+            return ResponseEntity.notFound().build();
         }
     }
 

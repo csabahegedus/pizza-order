@@ -38,14 +38,11 @@ public class Orders {
     @NotNull
     private String phoneNumber;
 
-    // TODO:
-    // Pizza
-
     @ManyToMany
     private List<Product> products;
 
-    @JsonIgnore()
-    @ManyToOne()
+    //@JsonIgnore
+    @ManyToOne
     private User user;
 
     @Column
@@ -58,12 +55,10 @@ public class Orders {
     }
 
     @Column(updatable = false)
-    @NotNull
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @Column
-    @NotNull
     @UpdateTimestamp
     private LocalDateTime modifiedAt;
 
