@@ -1,0 +1,26 @@
+<div>
+    <h1>Products</h1>
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Descritption</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="products.length > 0">
+                <tr *ngFor="let product of products">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.price }}</td>
+                </tr>
+            </ng-container>
+            <tr *ngIf="products.length === 0">
+                <td colspan="3">
+                    No products available.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

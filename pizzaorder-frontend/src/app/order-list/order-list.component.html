@@ -1,0 +1,28 @@
+<div>
+    <h1>My orders</h1>
+    <table class="order-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Product(s)</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngIf="orders.length > 0">
+                <tr *ngFor="let order of orders">
+                    <td>{{ order.name }}</td>
+                    <td>{{ order.address }}</td>
+                    <td>{{ order.products }}</td>
+                    <td>{{ order.status }}</td>
+                </tr>
+            </ng-container>
+            <tr *ngIf="orders.length === 0">
+                <td colspan="4">
+                    No order.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

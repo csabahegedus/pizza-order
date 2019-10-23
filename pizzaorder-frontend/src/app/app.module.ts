@@ -12,16 +12,23 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
 
 import { LandingComponent } from './landing/landing.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { HeaderComponent } from './header/header.component';
+import { OrderListComponent } from './order-list/order-list.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    LogInComponent
+    LogInComponent,
+    HeaderComponent,
+    OrderListComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +43,7 @@ import { LogInComponent } from './log-in/log-in.component';
     MatDividerModule,
     MatCardModule,
     MatFormFieldModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="app-header">
+    <mat-toolbar-row>
+        <div class="main-title">
+            <h1>Pizza Order</h1>
+        </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <button class="toolbar-button" mat-raised-button color="accent" routerLink="">
+            <mat-icon>home</mat-icon>
+            Dashboard
+        </button>
+        <button class="toolbar-button" mat-button routerLink="products">
+            <mat-icon>fastfood</mat-icon>
+            Products
+        </button>
+        <button class="toolbar-button" mat-button href="/categories">
+            <mat-icon>category</mat-icon>
+            Categories
+        </button>
+        <button class="toolbar-button" mat-button routerLink="orders">
+            <mat-icon>menu_open</mat-icon>
+            My Orders
+        </button>
+        <button class="toolbar-button" mat-button href="/orders/add">
+            <mat-icon>add_shopping_cart</mat-icon>
+            Create Order
+        </button>
+        <span class="spacer"></span>
+        <button class="toolbar-button" mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>account_box</mat-icon>
+            Profil
+        </button>
+        <mat-menu #menu="matMenu">
+            <button class="toolbar-button" mat-menu-item href="/profile">Details</button>
+            <mat-divider [inset]="false"></mat-divider>
+            <button class="toolbar-button" color="accent" mat-menu-item>Logout</button>
+        </mat-menu>
+  
+    </mat-toolbar-row>
+    
+</mat-toolbar>
