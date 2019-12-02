@@ -35,8 +35,71 @@ rendelő nevére, illetve cím(részlet)re.
 leírás, csípős/vegetáriánus tulajdonságok megadásával). Az egyértelműség
 miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
 
-### Az adatbázis az alábbi adatokat tárolja:
+___
+
+## Tervezés
+### Oldaltérkép
+* Regisztráció
+* Bejelentkezés
+* Főoldal
+* Termékek böngészése
+* Kategóriák megtekintése
+* Rendelés leadása
+
+#### Bejelentkezett felhasználóknak
+* Rendelés megtekintése
+  * Rendelés törlése
+* Kijelentkezés
+
+### Oldaltérkép
+* ` GET / ` Főoldal 
+* ` GET / login` Bejelentkező oldal 
+* ` POST / login ` Bejelentkezés
+* ` POST / logout ` Kijelentkezés
+* ` GET / users` Tagok listázása
+* ` POST / users` Tagok hozzáadása 
+* ` GET / products ` Termékek listázása 
+* ` POST / products ` Termékek hozzáadása
+* ` GET / orders ` Rendelések listázása
+* ` GET / orders / {id} `  Rendelés szűrése *id* alapján
+* ` GET / orders / {id} / products `  Termék kategóriájának megtekintése *id* alapján
+* ` GET / orders / {id} / user ` Vásárló megtekintése *id* alapján
+* ` POST / orders `  Rendelés leadása
+* ` PATCH / orders / {id} `  Rendelés státuszának módosítása *id* alapján
+* ` DELETE / orders / {id} ` Rendelés törlése *id* alapján
+* ` GET / categories ` Kategóriák listázása
+* ` GET / categories / {id} `  Kategóriák szűrése *id* alapján
+* ` GET / categories / {id} / prodocuts`  Egy kategóriába tartozó termékek megjelenítése *id* alapján
+*id - azonosító* 
+
+### Osztálymodell
+#### Adatbázisban tárold adatok
 * kategóriák (név);
 * pizzák és italok (név, kategória, leírás, ár, csípős-e, vegetáriánus-e);
 * munkatársak (teljes név, felhasználónév, jelszó);
 * rendelések (név, cím, telefonszám, megrendelt ételek és italok, teljesített-e)
+
+#### Adatbázismodell
+![](docs/images/database.png)
+
+___
+
+## Implementáció
+### Felhasznált eszközök
+* [Git](https://git-scm.com/) verziókezelő
+* [AngularJS](https://angularjs.org/) Javascript környezet
+* [Spring Boot](https://spring.io/projects/spring-boot) keretrendszer
+* [Github](https://github.com/) a projekt közzétételéhez
+
+### Fejlesztőkörnyezet felállítása 
+1. Git verziókezelő telepítése
+ *Githubon történő regisztráció ajánlott*
+2. Node.js környezet telepítése
+3. Projekt klónozása lokális gépre: ` git clone https://github.com/csabahegedus/pizzaorder-elte-project.git `
+4. A projektkönyvtárban a függőségek telepítése: npm i
+5. App indítása: ` npm start ` vagy ` npm run dev `
+
+#### Git
+A master branchre mennek a fejlesztések folyamatosan. Új branch indítása innen lehetséges. 
+
+### Könyvtárstruktúra
