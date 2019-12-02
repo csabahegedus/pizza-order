@@ -44,7 +44,10 @@ miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
  
 #### Use-case modell
 ![](docs/images/usecase.png)
- 
+*Actor:*
+* *Sötétkék jelöléssel: ADMIN*
+* *Egyszerű kék jelöléssel: USER*
+* *Világoskék jelöléssel: GUEST*
 ___
 
 ## Tervezés
@@ -120,11 +123,11 @@ ___
 ## Teszteset leírása
  
 ### Rendelés leadása
-1. Termékek böngészése
+1. Termékek böngészése  
 Erre lehetőség biztosított:
-* a *Főoldalon*, melyen a 10 leggyakrabban rendelt termék jelenik meg. 
-* a *Product* oldalon, melyen az összes, az áruházban szereplő és rendelhető termék megtalálható
-* a *Categories* oldalon, melyen kategóriákra bontva találhatóak meg az egyes termékek.
+  * a *Főoldalon*, melyen a 10 leggyakrabban rendelt termék jelenik meg. 
+  * a *Product* oldalon, melyen az összes, az áruházban szereplő és rendelhető termék megtalálható
+  * a *Categories* oldalon, melyen kategóriákra bontva találhatóak meg az egyes termékek.
 
 2. A termékek böngészését követően a Create Order gombra kattintva készíthetünk rendelést
 3. Az ételek/italok hozzáadását követően az oldal alján az ár folyamatosan változik a kosárban szereplő termékek függvényében
