@@ -38,7 +38,7 @@ miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
 ### Szerepkörök
 #### Szerepkörök bemutatása
  
-* vendég *(GUEST)*: nem regisztrált látogató, a Főoldalt böngészheti, regisztrálhat, a termékeket nézheti
+* vendég *(GUEST)*: nem regisztrált látogató, a Főoldalt böngészheti, regisztrálhat, a termékeket nézheti, rendelést készíthet össze, adhat le
 * tag *(USER)*: regisztrált, bejelentkezett látogató, ebben az esetben a cég alkalmazottja, aki a rendeléseket menedzselését hajtja végre, státuszt változtat, új terméket vesz fel
 * adminisztrátor *(ADMIN)*: a rendeléseket menedzselését hajtja végre, új termékeket adhat az étel- és itallaphoz
  
