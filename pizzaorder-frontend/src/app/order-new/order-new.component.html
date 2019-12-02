@@ -1,0 +1,8 @@
+<div style="padding-left: 4em;">
+    <h1>New order</h1>
+    <app-order-form
+        [order]="order"
+        [mode]="'create'"
+        (orderSubmit)="submitOrder($event)"
+    ></app-order-form>
+</div>

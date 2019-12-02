@@ -1,0 +1,9 @@
+<div style="padding-left: 4em;">
+    <h1>Edit order</h1>
+    <app-order-form
+        *ngIf="order"
+        [order]="order"
+        [mode]="'edit'"
+        (orderSubmit)="submitOrder($event)"
+    ></app-order-form>
+</div>

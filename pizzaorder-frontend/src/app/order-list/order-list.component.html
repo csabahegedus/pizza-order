@@ -1,24 +1,36 @@
 <div>
     <h1>My orders</h1>
+    <div>
+        <app-status-filter></app-status-filter>
+    </div>
     <table class="order-table">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Address</th>
                 <th>Product(s)</th>
+                <th>Phone</th>
                 <th>Status</th>
             </tr>
         </thead>
         <tbody>
-            <ng-container *ngIf="orders.length > 0">
-                <tr *ngFor="let order of orders">
+            <ng-container *ngIf="orderService.filteredOrders.length > 0">
+                <tr 
+                    *ngFor="let order of orderService.filteredOrders"
+                    [routerLink]="['/', 'orders', order.id]"
+                >
                     <td>{{ order.name }}</td>
                     <td>{{ order.address }}</td>
-                    <td>{{ order.products }}</td>
+                    <td><span
+                        *ngFor="let product of order.products"
+                    >
+                        {{ product.name }}
+                    </span></td>
+                    <td>{{ order.phone }}</td>
                     <td>{{ order.status }}</td>
                 </tr>
             </ng-container>
-            <tr *ngIf="orders.length === 0">
+            <tr *ngIf="orderService.filteredOrders.length === 0">
                 <td colspan="4">
                     No order.
                 </td>

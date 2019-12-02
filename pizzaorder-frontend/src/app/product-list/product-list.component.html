@@ -9,14 +9,14 @@
             </tr>
         </thead>
         <tbody>
-            <ng-container *ngIf="products.length > 0">
-                <tr *ngFor="let product of products">
+            <ng-container *ngIf="productService.products.length > 0">
+                <tr *ngFor="let product of productService.products">
                     <td>{{ product.name }}</td>
                     <td>{{ product.description }}</td>
                     <td>{{ product.price }}</td>
                 </tr>
             </ng-container>
-            <tr *ngIf="products.length === 0">
+            <tr *ngIf="productService.products.length === 0">
                 <td colspan="3">
                     No products available.
                 </td>

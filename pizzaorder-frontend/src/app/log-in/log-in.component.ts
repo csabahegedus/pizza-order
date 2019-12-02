@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/domain/user';
+import { FormGroup } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-log-in',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
-  constructor() { }
+  user: User = {
+    name: null,
+    password: '',
+    role: null,
+    username: '',
+  };
+
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form: FormGroup) {
+    const user = form.value as User;
+    this.authService.login(user.username, user.password);
   }
 
 }

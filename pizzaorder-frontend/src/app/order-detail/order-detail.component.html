@@ -1,0 +1,38 @@
+<div>
+    <div>
+        <span>Full name:&nbsp;&nbsp;</span>
+        <span>{{ order?.name }}</span>
+    </div>
+    <div>
+        <span>Address:&nbsp;&nbsp;</span>
+        <span>{{ order?.address }}</span>
+    </div>
+    <div>
+        <span>Phone:&nbsp;&nbsp;</span>
+        <span>{{ order?.phone }}</span>
+    </div>
+    <div>
+        <span>Products:&nbsp;&nbsp;</span>
+        <span
+            *ngFor="let product of order.products"
+        >
+            {{ product.name }}
+        </span>
+    </div>
+    <div>
+        <span>Status:&nbsp;&nbsp;</span>
+        <span>{{ order?.status }}</span>
+    </div>
+    <div>
+        <span>Creation date:&nbsp;&nbsp;</span>
+        <span>{{ order?.createdAt | date:'yyyy.MM.dd.' }}</span>
+    </div>
+    <div>
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="editOrder()"
+            [appRole]="[UserRole.Admin]"
+        >Edit</button>
+    </div>
+</div>
