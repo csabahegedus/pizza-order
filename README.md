@@ -35,12 +35,46 @@ rendelő nevére, illetve cím(részlet)re.
 leírás, csípős/vegetáriánus tulajdonságok megadásával). Az egyértelműség
 miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
 
-### Osztálymodell:
-#### Adatbázisban tárold adatok:
+## Tervezés
+### Oldaltérkép
+* Regisztráció
+* Bejelentkezés
+* Főoldal
+* Termékek böngészése
+* Kategóriák megtekintése
+* Rendelés leadása
+
+#### Bejelentkezett felhasználóknak
+* Rendelés megtekintése
+** Rendelés törlése
+* Kijelentkezés
+
+### Oldaltérkép
+* ` GET / ` Főoldal 
+* ` GET / login` Bejelentkező oldal 
+* ` POST / login ` Bejelentkezés
+* ` POST / logout ` Kijelentkezés
+* ` GET / users` Tagok listázása
+* ` POST / users` Tagok hozzáadása 
+* ` GET / products ` Termékek listázása 
+* ` POST / products ` Termékek hozzáadása
+* ` GET / orders ` Rendelések listázása
+* ` GET / orders / {id} `  Rendelés szűrése *id* alapján
+* ` GET / orders / {id} / products `  Termék kategóriájának megtekintése
+* ` GET / orders / {id} / user ` Vásárló megtekintése
+* ` POST / orders `  Rendelés leadása
+* ` PATCH / orders / {id} `  Rendelés státuszának módosítása
+* ` DELETE / orders / {id} ` Rendelés törlése
+* ` GET / categories ` Kategóriák listázása
+* ` GET / categories / {id} `  Kategóriák szűrése *id* alapján
+* ` GET / categories / {id} / prodocuts`  Egy kategóriába tartozó termékek megjelenítése *id* alapján
+
+### Osztálymodell
+#### Adatbázisban tárold adatok
 * kategóriák (név);
 * pizzák és italok (név, kategória, leírás, ár, csípős-e, vegetáriánus-e);
 * munkatársak (teljes név, felhasználónév, jelszó);
 * rendelések (név, cím, telefonszám, megrendelt ételek és italok, teljesített-e)
 
-#### Adatbázismodell:
+#### Adatbázismodell
 ![](docs/images/database.png)
