@@ -94,6 +94,8 @@ ___
 #### Adatbázismodell
 ![](docs/images/database.png)
 
+#### Design
+![](docs/images/design.png)
 ___
 
 ## Implementáció
