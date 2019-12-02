@@ -35,6 +35,16 @@ rendelő nevére, illetve cím(részlet)re.
 leírás, csípős/vegetáriánus tulajdonságok megadásával). Az egyértelműség
 miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
 
+### Szerepkörök
+#### Szerepkörök bemutatása
+ 
+* vendég *(GUEST)*: nem regisztrált látogató, a Főoldalt böngészheti, regisztrálhat, a termékeket nézheti
+* tag *(USER)*: regisztrált, bejelentkezett látogató, ebben az esetben a cég alkalmazottja, aki a rendeléseket menedzselését hajtja végre, státuszt változtat, új terméket vesz fel
+* adminisztrátor *(ADMIN)*: a rendeléseket menedzselését hajtja végre, új termékeket adhat az étel- és itallaphoz
+ 
+#### Use-case modell
+![](docs/images/usecase.png)
+ 
 ___
 
 ## Tervezés
@@ -49,6 +59,8 @@ ___
 #### Bejelentkezett felhasználóknak
 * Rendelés megtekintése
   * Rendelés törlése
+  * Státusz módosítása
+* Új termék felvétele
 * Kijelentkezés
 
 ### Oldaltérkép
@@ -101,5 +113,48 @@ ___
 
 #### Git
 A master branchre mennek a fejlesztések folyamatosan. Új branch indítása innen lehetséges. 
+___ 
+ 
+## Teszteset leírása
+ 
+### Rendelés leadása
+1. Termékek böngészése
+Erre lehetőség biztosított:
+* a *Főoldalon*, melyen a 10 leggyakrabban rendelt termék jelenik meg. 
+* a *Product* oldalon, melyen az összes, az áruházban szereplő és rendelhető termék megtalálható
+* a *Categories* oldalon, melyen kategóriákra bontva találhatóak meg az egyes termékek.
 
-### Könyvtárstruktúra
+2. A termékek böngészését követően a Create Order gombra kattintva készíthetünk rendelést
+3. Az ételek/italok hozzáadását követően az oldal alján az ár folyamatosan változik a kosárban szereplő termékek függvényében
+4. Rendelés leadása a *Rendelés* gomb segítségével
+
+### Alkalmazottak lehetőségei (*Státuszmódosítás*)
+1. A jobb felső sarokban található login gombra kattintva bejelentkezés a megfelelő felhasználónév és jelszó párossal
+2. My Orders menüre kattintás (*Itt kilistázódik az összes rendelés, névvel, címmel, megrendelt tétellel és státusszal*)
+3. Az egyes rendelésekre kattinva az új státusz kiválasztható, menthető
+___
+ 
+## Felhasználói dokumentáció
+ 
+### Termékek böngészése
+A Főoldalon - *Dashboard* a legnépszerűbb termékeket láthatod, melyeket a kosaradba helyezhetsz.
+A Termékek - *Product* oldalon az összes terméket listázva láthatod, melyek közül választhatsz, hogy mit szeretnél rendelni. Itt kerül feltüntetésre valamennyi elérhető termék, leírással, árral feltüntetve.
+A Kategóriák - *Categories* oldalon lehetőséges nyílik az egyes termékeket kategóriákra bontva megtekinteni.
+ 
+Az egyes oldalon elhelyezett termékeket a kosárba helyezheted, összeállítva így a kívánt rendelést. 
+ 
+A kosár tartalma bármikor megtekinthető, ekkor látszódnak a felvett tételek, illetve látható az összár. Bármely tétel kivehető a kosárból a termékek melletti megfelelő gombra kattintva.
+ 
+### Rendelés leadása
+A *Create Order* menüpontra kattintva van lehetőséged új rendelést leadni. A kosárba helyezett termékek összára folyamatosan látható. Az összes kiválasztott tétel után szükségesen megadandó adatok: a nevünk, címünk, illetve telefonszámunk. Ezt követően lehetőség van a rendelés leadására az Rendelés gomb segítségével. 
+ 
+### Rendelések kezelése
+A bejelentkezés a jobb felső sarokban elhelyezett ` Login ` gombbal lehetséges. Erre kattintva a felhasználónév és jelszó párost megadva az alkalmazottak beléphetnek az oldal további területeire.
+Amennyiben bejelentkeztél az oldalra, láthatod a korábban leadott rendeléseket, valamint menedzselheted a leadott rendeléseket. Az előbb említett műveletek elvégzésére a *My Orders* menüpont alatt van lehetőséged. Erre kattintva megjelenik a felhasználóhoz tartozó rendelések táblázatos formában listázva. Itt látható a *Név*, *Kiszállítási cím*, *Rendelt termékek* és a *Rendelés státusza*. A leadott rendelések státuszát állíthatják be annak megfelelően, hogy Teljesítve van-e már a rendelés, most készül, vagy még újként szerepel a rendszerben. 
+ 
+### Új termékeke felvétele
+Kizárólag az alkalmazottak adhatnak új termékeket a webáruház kínálatához. Az egyértelműség miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
+
+### Profil adatainak megtekintése
+A jobb felső sarokban elérhető a Profil kizárólag bejelentkezett személyek számára. Erre a menüpontra kattintva a legördülő listával a *Details* almenüre kattintva megtekinthetőek a bejelentkezett felhasználó részletes adatai.
+ 
