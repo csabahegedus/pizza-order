@@ -35,8 +35,12 @@ rendelő nevére, illetve cím(részlet)re.
 leírás, csípős/vegetáriánus tulajdonságok megadásával). Az egyértelműség
 miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
 
-### Az adatbázis az alábbi adatokat tárolja:
+### Osztálymodell:
+#### Adatbázisban tárold adatok:
 * kategóriák (név);
 * pizzák és italok (név, kategória, leírás, ár, csípős-e, vegetáriánus-e);
 * munkatársak (teljes név, felhasználónév, jelszó);
 * rendelések (név, cím, telefonszám, megrendelt ételek és italok, teljesített-e)
+
+#### Adatbázismodell:
+![](docs/images/database.png)
