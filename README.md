@@ -46,7 +46,7 @@ miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
 
 #### Bejelentkezett felhasználóknak
 * Rendelés megtekintése
-** Rendelés törlése
+  * Rendelés törlése
 * Kijelentkezés
 
 ### Oldaltérkép
