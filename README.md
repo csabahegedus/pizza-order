@@ -38,8 +38,8 @@ miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
 ### Szerepkörök
 #### Szerepkörök bemutatása
  
-* vendég *(GUEST)*: nem regisztrált látogató, a Főoldalt böngészheti, regisztrálhat, a termékeket nézheti, rendelést készíthet össze, adhat le
-* tag *(USER)*: regisztrált, bejelentkezett látogató, ebben az esetben a cég alkalmazottja, aki a rendeléseket menedzselését hajtja végre, státuszt változtat, új terméket vesz fel
+* vendég *(GUEST)*: nem regisztrált látogató, a Főoldalt böngészheti, regisztrálhat, a termékeket nézheti
+* tag *(USER)*: regisztrált, bejelentkezett látogató, rendelést készíthet össze, rendelést adhat le a vásárló
 * adminisztrátor *(ADMIN)*: a rendeléseket menedzselését hajtja végre, új termékeket adhat az étel- és itallaphoz
  
 #### Use-case modell
@@ -151,11 +151,13 @@ Az egyes oldalon elhelyezett termékeket a kosárba helyezheted, összeállítva
 A kosár tartalma bármikor megtekinthető, ekkor látszódnak a felvett tételek, illetve látható az összár. Bármely tétel kivehető a kosárból a termékek melletti megfelelő gombra kattintva.
  
 ### Rendelés leadása
-A *Create Order* menüpontra kattintva van lehetőséged új rendelést leadni. A kosárba helyezett termékek összára folyamatosan látható. Az összes kiválasztott tétel után szükségesen megadandó adatok: a nevünk, címünk, illetve telefonszámunk. Ezt követően lehetőség van a rendelés leadására az Rendelés gomb segítségével. 
+A bejelentkezést követően a *Create Order* menüpontra kattintva van lehetőséged új rendelést leadni. A kosárba helyezett termékek összára folyamatosan látható. Az összes kiválasztott tétel után szükségesen megadandó adatok: a nevünk, címünk, illetve telefonszámunk. Ezt követően lehetőség van a rendelés leadására az Rendelés gomb segítségével. 
  
 ### Rendelések kezelése
 A bejelentkezés a jobb felső sarokban elhelyezett ` Login ` gombbal lehetséges. Erre kattintva a felhasználónév és jelszó párost megadva az alkalmazottak beléphetnek az oldal további területeire.
-Amennyiben bejelentkeztél az oldalra, láthatod a korábban leadott rendeléseket, valamint menedzselheted a leadott rendeléseket. Az előbb említett műveletek elvégzésére a *My Orders* menüpont alatt van lehetőséged. Erre kattintva megjelenik a felhasználóhoz tartozó rendelések táblázatos formában listázva. Itt látható a *Név*, *Kiszállítási cím*, *Rendelt termékek* és a *Rendelés státusza*. A leadott rendelések státuszát állíthatják be annak megfelelően, hogy Teljesítve van-e már a rendelés, most készül, vagy még újként szerepel a rendszerben. 
+Amennyiben bejelentkeztél az oldalra, láthatod a korábban leadott rendeléseket és azok adatait. 
+*Adminként:*
+valamint menedzselheted a leadott rendeléseket. Az előbb említett műveletek elvégzésére a *My Orders* menüpont alatt van lehetőséged. Erre kattintva megjelenik a felhasználóhoz tartozó rendelések táblázatos formában listázva. Itt látható a *Név*, *Kiszállítási cím*, *Rendelt termékek* és a *Rendelés státusza*. A leadott rendelések státuszát állíthatják be annak megfelelően, hogy Teljesítve van-e már a rendelés, most készül, vagy még újként szerepel a rendszerben. 
  
 ### Új termékeke felvétele
 Kizárólag az alkalmazottak adhatnak új termékeket a webáruház kínálatához. Az egyértelműség miatt nem engedélyezett több ugyanolyan nevű étel/ital felvitele.
