@@ -24,9 +24,9 @@
                     <td><span
                         *ngFor="let product of order.products"
                     >
-                        {{ product.name }}
+                        #{{ product.name }}
                     </span></td>
-                    <td>{{ order.phone }}</td>
+                    <td>{{ order.phoneNumber }}</td>
                     <td>{{ order.status }}</td>
                 </tr>
             </ng-container>

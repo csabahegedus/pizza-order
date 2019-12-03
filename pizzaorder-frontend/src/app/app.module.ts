@@ -30,6 +30,7 @@ import { HeaderInterceptor } from './header-interceptor';
 import { OrderEditComponent } from './order-edit/order-edit.component';
 import { OrderNewComponent } from './order-new/order-new.component';
 import { RoleDirective } from './directives/role.directive';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { RoleDirective } from './directives/role.directive';
     OrderEditComponent,
     OrderNewComponent,
     RoleDirective,
+    CategoryListComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,6 @@ import { RoleDirective } from './directives/role.directive';
     FormsModule,
     MatButtonToggleModule,
     HttpClientModule,
-    RoleDirective,
   ],
   providers: [
     {

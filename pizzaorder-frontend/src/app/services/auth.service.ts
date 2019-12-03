@@ -15,7 +15,7 @@ export class AuthService {
     private router: Router,
     private http: HttpClient
   ) {
-    this.logout();
+    this.logout(false);
   }
 
   get role(): UserRole {

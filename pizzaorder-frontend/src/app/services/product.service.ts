@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/domain/product';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,13 @@ export class ProductService {
     },
   ];
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  async getProducts() {
+    const products = await (this.http.get('products').toPromise() as Promise<any[]>);
+    this.products = products;
+  }
+
 }

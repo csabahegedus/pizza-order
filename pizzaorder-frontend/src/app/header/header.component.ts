@@ -9,6 +9,8 @@ import { UserRole } from 'src/domain/user-role';
 })
 export class HeaderComponent implements OnInit {
 
+  UserRole = UserRole;
+
   constructor(
     private authService: AuthService
   ) { }

@@ -9,6 +9,7 @@ import { OrderNewComponent } from '../order-new/order-new.component';
 import { OrderEditComponent } from '../order-edit/order-edit.component';
 import { UserRole } from 'src/domain/user-role';
 import { RoleGuard } from '../guard/role.guard';
+import { CategoryListComponent } from '../category-list/category-list.component';
 
 
 const routes: Routes = [
@@ -57,7 +58,10 @@ const routes: Routes = [
     path: 'products',
     component: ProductListComponent,
   },
-
+  {
+    path: 'categories',
+    component: CategoryListComponent,
+  },
   {
     path: '**',
     redirectTo: '/',

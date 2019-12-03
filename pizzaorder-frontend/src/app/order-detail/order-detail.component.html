@@ -9,14 +9,14 @@
     </div>
     <div>
         <span>Phone:&nbsp;&nbsp;</span>
-        <span>{{ order?.phone }}</span>
+        <span>{{ order?.phoneNumber }}</span>
     </div>
     <div>
         <span>Products:&nbsp;&nbsp;</span>
         <span
-            *ngFor="let product of order.products"
+            *ngFor="let product of order?.products"
         >
-            {{ product.name }}
+            #{{ product.name }}
         </span>
     </div>
     <div>

@@ -22,18 +22,7 @@ export class OrderEditComponent implements OnInit {
 
   async ngOnInit() {
     const orderId = parseInt(this.route.snapshot.params.id);
-    const orderExample = {
-      id: 1,
-      name: 'Kis Joska',
-      address: 'Rakoczi út 23.',
-      products: [],
-      phone: '+36201234567',
-      status: OrderStatus.New,
-      createdAt: null,
-      modifiedAt: null,
-    };
-    //this.order = await this.orderService.getOrder(orderId);
-    this.order = orderExample;
+    this.order = await this.orderService.getOrder(orderId);
   }
 
   async submitOrder(order: Order) {

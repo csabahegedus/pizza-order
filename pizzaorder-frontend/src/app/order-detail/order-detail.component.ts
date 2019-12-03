@@ -14,6 +14,7 @@ import { UserRole } from 'src/domain/user-role';
 })
 export class OrderDetailComponent implements OnInit {
 
+  UserRole = UserRole;
   order: Order;
 
   constructor(
@@ -24,25 +25,7 @@ export class OrderDetailComponent implements OnInit {
 
   async ngOnInit() {
     const orderId = parseInt(this.route.snapshot.params.id);
-
-    const product: Product = {
-      id: 1,
-        name: 'Hawaii pizza',
-        description: 'Nagyon finom hawaii pizza.',
-        price: 1690,
-    };
-    const orderExample = {
-      id: 1,
-      name: 'Kis Joska',
-      address: 'Rakoczi út 23.',
-      products: [product],
-      phone: '+36201234567',
-      status: OrderStatus.New,
-      createdAt: null,
-      modifiedAt: null,
-    };
-    //this.order = await this.orderService.getOrder(orderId);
-    this.order = orderExample;
+    this.order = await this.orderService.getOrder(orderId);
   }
 
   editOrder() {

@@ -1,0 +1,11 @@
+<div>
+    <h1>Categories</h1>
+    <ng-container *ngIf="categoryService.categories.length > 0">
+        <div *ngFor="let category of categoryService.categories">
+            <h2># {{ category.name }}</h2>
+        </div>
+    </ng-container>
+    <a *ngIf="categoryService.categories.length === 0">
+        No category available.
+    </a>
+</div>
