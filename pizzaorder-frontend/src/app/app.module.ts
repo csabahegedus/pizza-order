@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule }  from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {MatListModule} from '@angular/material/list';
 
 import { LandingComponent } from './landing/landing.component';
 import { LogInComponent } from './log-in/log-in.component';
@@ -67,6 +68,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
     FormsModule,
     MatButtonToggleModule,
     HttpClientModule,
+    MatListModule,
   ],
   providers: [
     {

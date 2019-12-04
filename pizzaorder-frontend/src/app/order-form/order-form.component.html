@@ -54,22 +54,22 @@
           placeholder="Phone"
           value=""
           [(ngModel)]="order.phoneNumber"
-          name="phone"
+          name="phoneNumber"
           required
-          #phone="ngModel"
+          #phoneNumber="ngModel"
           pattern="[+]36[2|3|7]0[0-9]*"
       />
       <mat-error 
-          *ngIf="phone.invalid && 
-          (phone.touched || phone.dirty) && 
-          phone.errors['required']"
+          *ngIf="phoneNumber.invalid && 
+          (phoneNumber.touched || phoneNumber.dirty) && 
+          phoneNumber.errors['required']"
       >
           Phone is required!
       </mat-error>
       <mat-error 
-          *ngIf="phone.invalid && 
-          (phone.touched || phone.dirty) && 
-          phone.errors['pattern']"
+          *ngIf="phoneNumber.invalid && 
+          (phoneNumber.touched || phoneNumber.dirty) && 
+          phoneNumber.errors['pattern']"
       >
           Phone is not a valid '+36901234567' format!
       </mat-error>
@@ -85,7 +85,7 @@
           #product="ngModel"
           [disabled]="mode === 'edit'"
       >
-        <mat-option *ngFor="let product of products" [value]="product.name">
+        <mat-option *ngFor="let product of productService.products" [value]="product.name">
           {{ product.name }}
         </mat-option>
       </mat-select>

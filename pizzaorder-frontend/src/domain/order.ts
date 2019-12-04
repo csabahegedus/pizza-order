@@ -6,7 +6,7 @@ export interface Order {
     name: string;
     address: string;
     products: Product[];
-    phone: string;
+    phoneNumber: string;
     status: OrderStatus;
     createdAt: Date;
     modifiedAt: Date;

@@ -5,6 +5,7 @@ import { FormGroup } from '@angular/forms';
 import { OrderStatus} from 'src/domain/order-status';
 import { OrderService } from '../services/order.service';
 import { Router } from '@angular/router';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-order-form',
@@ -28,17 +29,32 @@ export class OrderFormComponent implements OnInit {
     value: 'DONE',
   }]
 
-  constructor() { }
+  constructor(
+    private productService: ProductService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.order.products.length === 0) {
+      this.productService.getProducts();
+    }
+  }
 
   async submitOrder(form: FormGroup) {
     if (!form.valid) {
       return;
     }
-    //console.log(form.value);
+    const order = form.getRawValue() as Order;
+    const productName = order.products.toString();
 
-    this.orderSubmit.emit(form.getRawValue() as Order);
+    const product = this.productService.products.filter(product => {        
+      if (product.name === productName) {
+        return product;
+      }
+    });
+    order.products = product;
+    this.orderSubmit.emit(order);
+
+   //this.orderSubmit.emit(form.getRawValue() as Order);
   }
 
 }

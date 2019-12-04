@@ -23,7 +23,7 @@ export class OrderNewComponent implements OnInit {
       id: null,
       name: '',
       address: '',
-      phone: '',
+      phoneNumber: '',
       products: [],
       status: 'NEW' as OrderStatus,
       createdAt: null,

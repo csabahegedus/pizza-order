@@ -22,7 +22,7 @@ export class OrderService {
       name: 'Kis Joska',
       address: 'Rakoczi út 23.',
       products: [this.product],
-      phone: '+36201234567',
+      phoneNumber: '+36201234567',
       status: OrderStatus.New,
       createdAt: null,
       modifiedAt: null,
@@ -32,7 +32,7 @@ export class OrderService {
       name: 'Alma Ferenc',
       address: 'Jagello utca 46.',
       products: [this.product],
-      phone: '+36301234567',
+      phoneNumber: '+36301234567',
       status: OrderStatus.Doing,
       createdAt: null,
       modifiedAt: null,
@@ -42,7 +42,7 @@ export class OrderService {
       name: 'Balogh Tibi',
       address: 'Argo utca 77.',
       products: [this.product],
-      phone: '+36701234567',
+      phoneNumber: '+36701234567',
       status: OrderStatus.Done,
       createdAt: null,
       modifiedAt: null,
@@ -56,14 +56,12 @@ export class OrderService {
   ) { }
 
   async getOrders() {
-    const orders = await (this.http.get('orders')
-      .toPromise() as Promise<any[]>);
+    const orders = await (this.http.get('orders').toPromise() as Promise<any[]>);
     this.filteredOrders = this.orders = orders.map(this.createOrderModel);
   }
 
   async getOrder(orderId: number): Promise<Order> {
-    const order = await (this.http.get(`orders/${orderId}`)
-      .toPromise() as Promise<any>);
+    const order = await (this.http.get(`orders/${orderId}`).toPromise() as Promise<any>);
     return this.createOrderModel(order);
   }
 
