@@ -1,6 +1,7 @@
 package com.elte.pizzaorderbackend.controller;
 
 import com.elte.pizzaorderbackend.model.User;
+import com.elte.pizzaorderbackend.security.AuthenticatedUser;
 import com.elte.pizzaorderbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,12 +11,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private AuthenticatedUser authenticatedUser;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -38,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping("login")
-    public ResponseEntity login() {
-        return ResponseEntity.ok().build();
+    public ResponseEntity<User> login() { return ResponseEntity.ok(authenticatedUser.getUser());
     }
+
 }

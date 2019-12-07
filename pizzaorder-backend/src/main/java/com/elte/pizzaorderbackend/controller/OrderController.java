@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
@@ -30,7 +31,7 @@ public class OrderController {
             return orderRepository.findAll();
         }
         // User role get only the user's orders
-        return orderRepository.findByName(authenticatedUser.getUser().getFullName());
+        return authenticatedUser.getUser().getOrders();
     }
 
     @Secured({"ROLE_USER", "ROLE_ADMIN"})

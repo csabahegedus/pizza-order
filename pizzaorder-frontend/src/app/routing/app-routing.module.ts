@@ -10,6 +10,7 @@ import { OrderEditComponent } from '../order-edit/order-edit.component';
 import { UserRole } from 'src/domain/user-role';
 import { RoleGuard } from '../guard/role.guard';
 import { CategoryListComponent } from '../category-list/category-list.component';
+import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,7 @@ const routes: Routes = [
     path: 'orders/new',
     component: OrderNewComponent,
     data: {
-      roles: [UserRole.User],
+      roles: [UserRole.Guest],
     },
     canActivate: [RoleGuard],
   },
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'categories',
     component: CategoryListComponent,
+  },
+  {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent,
   },
   {
     path: '**',

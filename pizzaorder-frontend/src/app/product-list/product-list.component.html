@@ -1,26 +1,20 @@
-<div>
+<div class = products-page>
     <h1>Products</h1>
-    <table class="product-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Descritption</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngIf="productService.products.length > 0">
-                <tr *ngFor="let product of productService.products">
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.description }}</td>
-                    <td>{{ product.price }}</td>
-                </tr>
-            </ng-container>
-            <tr *ngIf="productService.products.length === 0">
-                <td colspan="3">
-                    No products available.
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <p><h3>In order to place an order, please log in.</h3>
+
+    <div class="product-card-list">
+    <ng-container *ngIf="productService.products.length > 0">
+        <div 
+            *ngFor="let product of productService.products"
+        >
+            <app-product-card
+                [product]="product"
+            ></app-product-card>
+        </div>
+           
+    </ng-container>
+    </div>
+    <h3 *ngIf="productService.products.length === 0">
+        No products available.
+    </h3>
 </div>

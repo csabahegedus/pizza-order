@@ -18,6 +18,10 @@ export class AuthService {
     this.logout(false);
   }
 
+  get fullName(): String {
+    return this.user.name;
+  }
+
   get role(): UserRole {
     return this.user.role;
   }

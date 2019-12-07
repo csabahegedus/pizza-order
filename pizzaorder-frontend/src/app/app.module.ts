@@ -32,6 +32,8 @@ import { OrderEditComponent } from './order-edit/order-edit.component';
 import { OrderNewComponent } from './order-new/order-new.component';
 import { RoleDirective } from './directives/role.directive';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
     OrderNewComponent,
     RoleDirective,
     CategoryListComponent,
+    ProductCardComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

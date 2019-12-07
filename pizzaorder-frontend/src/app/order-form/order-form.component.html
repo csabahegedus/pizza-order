@@ -4,6 +4,7 @@
       <input
           matInput
           placeholder="Full name"
+          value="authService.fullName"
           [(ngModel)]="order.name"
           name="name"
           required
@@ -75,51 +76,17 @@
       </mat-error>
     </mat-form-field>
   </div>
-  <div>
-    <mat-form-field>
-      <mat-label>Products</mat-label>
-      <mat-select
-          [(ngModel)]="order.products"
-          name="products"
-          required
-          #product="ngModel"
-          [disabled]="mode === 'edit'"
-      >
-        <mat-option *ngFor="let product of productService.products" [value]="product.name">
-          {{ product.name }}
-        </mat-option>
-      </mat-select>
-      <mat-error 
-          *ngIf="product.invalid && 
-          (product.touched || product.dirty) && 
-          product.errors['required']"
-      >
-          Product(s) is required!
-      </mat-error>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <mat-label>Status</mat-label>
-      <mat-select
-          [(ngModel)]="order.status"
-          name="status"
-          required
-          #status="ngModel"
-          [disabled]="mode === 'create'"
-      >
-        <mat-option *ngFor="let status of statuses" [value]="status.value">
-          {{ status.label }}
-        </mat-option>
-      </mat-select>
-      <mat-error 
-          *ngIf="status.invalid && 
-          (status.touched || status.dirty) && 
-          status.errors['required']"
-      >
-          Status is required!
-      </mat-error>
-    </mat-form-field>
+  <div class="new-order-products">
+    
+      <mat-label><b>Products:</b></mat-label>
+      <mat-list>
+        <mat-list-item *ngFor="let item of cartItems">
+        <b>{{ item.product.name }}</b>
+        <span class="spacer"></span>
+        <b>x{{ item.quantity }}</b>
+        </mat-list-item>
+      </mat-list>
+    
   </div>
   <div>
     <button mat-raised-button color="primary">Submit</button>

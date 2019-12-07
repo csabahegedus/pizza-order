@@ -37,4 +37,9 @@ export class ProductService {
     this.products = products;
   }
 
+  async getProduct(productId: number): Promise<Product> {
+    const product = await (this.http.get(`product/${productId}`).toPromise() as Promise<any>);
+    return product;
+  }
+
 }

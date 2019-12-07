@@ -32,3 +32,25 @@ div { text-align: center; align-content: center; }
 .product-table {
     width: 100%;
 }
+
+.cart-table {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.mat-card.product-card {
+    width: 70%;
+    margin: 50px;
+}
+
+.product-card-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.new-order-products{
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 30px;
+}

@@ -5,15 +5,12 @@ import com.elte.pizzaorderbackend.model.Product;
 import com.elte.pizzaorderbackend.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
